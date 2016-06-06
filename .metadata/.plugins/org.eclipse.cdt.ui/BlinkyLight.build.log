@@ -1,0 +1,55 @@
+19:40:27 **** Incremental Build of configuration Debug for project BlinkyLight ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328 BlinkyLight.elf
+AVR Memory Usage
+----------------
+Device: atmega328
+
+Program:    3532 bytes (10.8% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm328 -cusbasp -Uflash:w:BlinkyLight.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9514
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "BlinkyLight.hex"
+avrdude: input file BlinkyLight.hex auto detected as Intel Hex
+avrdude: writing flash (3532 bytes):
+
+Writing | ################################################## | 100% 1.66s
+
+avrdude: 3532 bytes of flash written
+avrdude: verifying flash memory against BlinkyLight.hex:
+avrdude: load data flash data from input file BlinkyLight.hex:
+avrdude: input file BlinkyLight.hex auto detected as Intel Hex
+avrdude: input file BlinkyLight.hex contains 3532 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.01s
+
+avrdude: verifying ...
+avrdude: 3532 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+19:40:30 Build Finished (took 3s.446ms)
+

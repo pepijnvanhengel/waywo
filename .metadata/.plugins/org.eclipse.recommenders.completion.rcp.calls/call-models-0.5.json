@@ -1,0 +1,33 @@
+{
+  "C:\\Program Files\\Java\\jre7\\lib\\rt.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "C:\\Program Files\\Java\\jre7\\lib\\rt.jar",
+    "status": "RESOLVED",
+    "error": "No class path info available for \u0027C:\\Program Files\\Java\\jre7\\lib\\rt.jar\u0027. Skipped."
+  },
+  "C:\\Users\\Pepijn\\workspace\\hoofdstuk_8\\src": {
+    "location": "C:\\Users\\Pepijn\\workspace\\hoofdstuk_8\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Pepijn\\workspace\\hoofdstuk_8\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Pepijn\\workspace\\oefenopdracht\\src": {
+    "location": "C:\\Users\\Pepijn\\workspace\\oefenopdracht\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Pepijn\\workspace\\oefenopdracht\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Pepijn\\workspace\\bank_voorbeeld\\src": {
+    "location": "C:\\Users\\Pepijn\\workspace\\bank_voorbeeld\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Pepijn\\workspace\\bank_voorbeeld\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Pepijn\\workspace\\Pong\\src": {
+    "location": "C:\\Users\\Pepijn\\workspace\\Pong\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Pepijn\\workspace\\Pong\\src\u0027. Skipped."
+  },
+  "C:\\Users\\Pepijn\\workspace\\event-handling\\src": {
+    "location": "C:\\Users\\Pepijn\\workspace\\event-handling\\src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027C:\\Users\\Pepijn\\workspace\\event-handling\\src\u0027. Skipped."
+  }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;sentinel_value&apos; to &apos;hoofdstuk_4/src&apos;&#x0D;&#x0A;- Original project: &apos;hoofdstuk_3&apos;&#x0D;&#x0A;- Destination element: &apos;hoofdstuk_4/src&apos;&#x0D;&#x0A;- Original element: &apos;hoofdstuk_3/src/sentinel_value&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=hoofdstuk_4/src" element1="/src&lt;sentinel_value" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1410773231044" version="1.0"/>
+</session>

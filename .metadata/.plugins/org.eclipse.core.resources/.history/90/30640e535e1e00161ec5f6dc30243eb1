@@ -1,0 +1,11 @@
+package hour_registration;
+
+import java.awt.GridLayout;
+
+import javax.swing.JPanel;
+
+public class Main {
+	public static void main(String[] args){
+		JPanel p = new JPanel(new GridLayout()); //PREFERRED!
+	}
+}

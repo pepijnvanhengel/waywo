@@ -1,0 +1,70 @@
+14:59:35 **** Incremental Build of configuration Release for project TellerOpdracht2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega328 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c:173: warning: return type of 'main' is not 'int'
+Finished building: ../main.c
+ 
+Building target: TellerOpdracht2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,TellerOpdracht2.map -mmcu=atmega328 -o "TellerOpdracht2.elf"  ./main.o   
+Finished building target: TellerOpdracht2.elf
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex TellerOpdracht2.elf  "TellerOpdracht2.hex"
+Finished building: TellerOpdracht2.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328 TellerOpdracht2.elf
+AVR Memory Usage
+----------------
+Device: atmega328
+
+Program:     410 bytes (1.3% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm328 -cusbasp -Uflash:w:TellerOpdracht2.hex:a
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.00s
+
+avrdude: Device signature = 0x1e9514
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "TellerOpdracht2.hex"
+avrdude: input file TellerOpdracht2.hex auto detected as Intel Hex
+avrdude: writing flash (410 bytes):
+
+Writing | ################################################## | 100% 0.23s
+
+avrdude: 410 bytes of flash written
+avrdude: verifying flash memory against TellerOpdracht2.hex:
+avrdude: load data flash data from input file TellerOpdracht2.hex:
+avrdude: input file TellerOpdracht2.hex auto detected as Intel Hex
+avrdude: input file TellerOpdracht2.hex contains 410 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.12s
+
+avrdude: verifying ...
+avrdude: 410 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+14:59:37 Build Finished (took 1s.851ms)
+

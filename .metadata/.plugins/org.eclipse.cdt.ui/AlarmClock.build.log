@@ -1,0 +1,67 @@
+12:06:23 **** Incremental Build of configuration Release for project AlarmClock ****
+make all 
+Building file: ../hd44780.c
+Invoking: AVR Compiler
+avr-gcc -Wall -Os -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega328 -DF_CPU=1000000UL -MMD -MP -MF"hd44780.d" -MT"hd44780.o" -c -o "hd44780.o" "../hd44780.c"
+In file included from ../hd44780.c:8:
+../hd44780.h:10:30: error: hd44780_settings.h: No such file or directory
+../hd44780.c:32:4: error: #error LCD_BITS is not defined or not valid.
+../hd44780.c:36:4: error: #error WAIT_MODE is not defined or not valid.
+../hd44780.c:40:4: error: #error RW_LINE_IMPLEMENTED is not defined or not valid.
+../hd44780.c:48:4: error: #error LCD_DISPLAYS is not defined or not valid.
+../hd44780.c: In function 'lcd_e_port_low':
+../hd44780.c:170: error: 'LCD_E_PORT' undeclared (first use in this function)
+../hd44780.c:170: error: (Each undeclared identifier is reported only once
+../hd44780.c:170: error: for each function it appears in.)
+../hd44780.c:170: error: 'LCD_E_PIN' undeclared (first use in this function)
+../hd44780.c: In function 'lcd_e_port_high':
+../hd44780.c:193: error: 'LCD_E_PORT' undeclared (first use in this function)
+../hd44780.c:193: error: 'LCD_E_PIN' undeclared (first use in this function)
+../hd44780.c: In function 'lcd_e_ddr_low':
+../hd44780.c:216: error: 'LCD_E_PORT' undeclared (first use in this function)
+../hd44780.c:216: error: 'LCD_E_PIN' undeclared (first use in this function)
+../hd44780.c: In function 'lcd_e_ddr_high':
+../hd44780.c:239: error: 'LCD_E_PORT' undeclared (first use in this function)
+../hd44780.c:239: error: 'LCD_E_PIN' undeclared (first use in this function)
+../hd44780.c: In function 'lcd_write':
+../hd44780.c:404: error: 'LCD_RS_PORT' undeclared (first use in this function)
+../hd44780.c:404: error: 'LCD_RS_PIN' undeclared (first use in this function)
+../hd44780.c:446: error: 'LCD_DB7_PORT' undeclared (first use in this function)
+../hd44780.c:446: error: 'LCD_DB7_PIN' undeclared (first use in this function)
+../hd44780.c:447: error: 'LCD_DB6_PORT' undeclared (first use in this function)
+../hd44780.c:447: error: 'LCD_DB6_PIN' undeclared (first use in this function)
+../hd44780.c:448: error: 'LCD_DB5_PORT' undeclared (first use in this function)
+../hd44780.c:448: error: 'LCD_DB5_PIN' undeclared (first use in this function)
+../hd44780.c:449: error: 'LCD_DB4_PORT' undeclared (first use in this function)
+../hd44780.c:449: error: 'LCD_DB4_PIN' undeclared (first use in this function)
+../hd44780.c:450: error: 'LCD_DB3_PORT' undeclared (first use in this function)
+../hd44780.c:450: error: 'LCD_DB3_PIN' undeclared (first use in this function)
+../hd44780.c:451: error: 'LCD_DB2_PORT' undeclared (first use in this function)
+../hd44780.c:451: error: 'LCD_DB2_PIN' undeclared (first use in this function)
+../hd44780.c:452: error: 'LCD_DB1_PORT' undeclared (first use in this function)
+../hd44780.c:452: error: 'LCD_DB1_PIN' undeclared (first use in this function)
+../hd44780.c:453: error: 'LCD_DB0_PORT' undeclared (first use in this function)
+../hd44780.c:453: error: 'LCD_DB0_PIN' undeclared (first use in this function)
+../hd44780.c: In function 'lcd_init':
+../hd44780.c:567: error: 'LCD_RS_PORT' undeclared (first use in this function)
+../hd44780.c:567: error: 'LCD_RS_PIN' undeclared (first use in this function)
+../hd44780.c:571: error: 'LCD_DB7_PORT' undeclared (first use in this function)
+../hd44780.c:571: error: 'LCD_DB7_PIN' undeclared (first use in this function)
+../hd44780.c:572: error: 'LCD_DB6_PORT' undeclared (first use in this function)
+../hd44780.c:572: error: 'LCD_DB6_PIN' undeclared (first use in this function)
+../hd44780.c:573: error: 'LCD_DB5_PORT' undeclared (first use in this function)
+../hd44780.c:573: error: 'LCD_DB5_PIN' undeclared (first use in this function)
+../hd44780.c:574: error: 'LCD_DB4_PORT' undeclared (first use in this function)
+../hd44780.c:574: error: 'LCD_DB4_PIN' undeclared (first use in this function)
+../hd44780.c:602: error: 'DELAY_RESET' undeclared (first use in this function)
+../hd44780.c:673: error: 'ActiveDisplay' undeclared (first use in this function)
+../hd44780.c:675: error: 'LCD_DISPLAY_LINES' undeclared (first use in this function)
+../hd44780.c:676: error: 'LCD_DISPLAY2_LINES' undeclared (first use in this function)
+../hd44780.c:685: error: 'LCD_DB3_PORT' undeclared (first use in this function)
+../hd44780.c:685: error: 'LCD_DB3_PIN' undeclared (first use in this function)
+../hd44780.c:688: error: 'LCD_DB2_PORT' undeclared (first use in this function)
+../hd44780.c:688: error: 'LCD_DB2_PIN' undeclared (first use in this function)
+make: *** [hd44780.o] Error 1
+
+12:06:24 Build Finished (took 568ms)
+

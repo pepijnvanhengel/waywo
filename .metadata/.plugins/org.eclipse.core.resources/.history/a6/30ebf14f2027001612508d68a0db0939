@@ -1,0 +1,121 @@
+/*
+ * main.c
+ *
+ *  Created on: 31 May 2016
+ *      Author: Pepijn
+ */
+
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+//Configurations
+
+//**************
+// Here you may cange the port in which you have connected the display
+#define SEVEN_SEGMENT_PORT PORTB
+#define SEVEN_SEGMENT_DDR DDRB
+
+
+void SevenSegment(uint8_t n,uint8_t dp)
+{
+/*
+This function writes a digit given by n to the display
+
+the decimal point is displayed if dp=1
+
+Note:
+n must be less than 9
+*/
+   if(n<10)
+   {
+      switch (n)
+      {
+         case 0:
+        	 //1
+         SEVEN_SEGMENT_PORT=0b11110011;
+         break;
+
+         case 1:
+        	 //2
+         SEVEN_SEGMENT_PORT=0b00001001;
+         break;
+
+         case 2:
+        	 //3
+         SEVEN_SEGMENT_PORT=0b11000001;
+         break;
+
+         case 3:
+        	 //4
+         SEVEN_SEGMENT_PORT=0b11100010;
+         break;
+
+         case 4:
+        	 //5
+         SEVEN_SEGMENT_PORT=0b10000100;
+         break;
+
+         case 5:
+        	 //6
+         SEVEN_SEGMENT_PORT=0b01000100;
+         break;
+
+         case 6:
+        	 //7
+         SEVEN_SEGMENT_PORT=0b11110011;
+         break;
+
+         case 7:
+        	 //8
+         SEVEN_SEGMENT_PORT=0b11111111;
+         break;
+
+         case 8:
+        	 //9
+         SEVEN_SEGMENT_PORT=0b11111111;
+         break;
+
+         case 9:
+        	   //0
+         SEVEN_SEGMENT_PORT=0b11111111;
+         break;
+      }
+      if(dp)
+      {
+         //if decimal point should be displayed
+
+         //make 0th bit Low
+         SEVEN_SEGMENT_PORT&=0b11111110;
+      }
+   }
+   else
+   {
+      //This symbol on display tells that n was greater than 9
+      //so display can't handle it
+
+      SEVEN_SEGMENT_PORT=0b11111101;
+   }
+}
+
+void main()
+{
+   //Setup
+   SEVEN_SEGMENT_DDR=0xFF;    //All output
+   SEVEN_SEGMENT_PORT=0xFF;   //All segments off
+
+   uint8_t count=0;
+
+   while(1)
+   {
+      SevenSegment(count,0);
+
+      count++;
+      if(count==10)
+      {
+         count=0;
+      }
+
+      _delay_ms(1000);
+   }
+}

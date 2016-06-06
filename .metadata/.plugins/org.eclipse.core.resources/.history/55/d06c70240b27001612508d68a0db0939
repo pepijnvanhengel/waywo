@@ -1,0 +1,46 @@
+/*
+ * main.c
+ *
+ *  Created on: 11 May 2016
+ *      Author: Pepijn
+ */
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+#define AAN 1
+#define UIT 0
+#define LED1 0
+#define LED2 1
+#define LED3 2
+
+void ledAansturen(uint8_t b){
+	PORTB = b;
+	_delay_ms(100);
+}
+
+/*
+ * Lednummer is een waarde tussen 0 en 1
+ */
+void zetLedAan(uint8_t lednummer, uint8_t aanuit){
+	PORTB = (1<<lednummer);
+	_delay_ms(1000);
+}
+
+int main(void){
+	// setup
+	DDRB = 0b00000111;
+
+	while(1){
+		zetLedAan(LED1, AAN);
+		zetLedAan(LED2, UIT);
+		zetLedAan(LED3, UIT);
+		DDRB = 0xff;
+		_delay_ms(1000);
+		DDRB = 0b00000111;
+
+
+		// hier schrijf je het programma
+	}
+	return 0;
+}

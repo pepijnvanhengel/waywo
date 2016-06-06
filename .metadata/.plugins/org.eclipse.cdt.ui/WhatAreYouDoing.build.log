@@ -1,0 +1,13 @@
+12:06:32 **** Incremental Build of configuration Release for project WhatAreYouDoing ****
+make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+avr-gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+In file included from ../main.c:8:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:85:3: warning: #warning "F_CPU not defined for <util/delay.h>"
+../main.c: In function 'main':
+../main.c:16: error: expected ';' before ':' token
+make: *** [main.o] Error 1
+
+12:06:32 Build Finished (took 498ms)
+

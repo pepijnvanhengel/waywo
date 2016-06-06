@@ -1,0 +1,217 @@
+/*
+ * main.c
+ *
+ *  Created on: 31 May 2016
+ *      Author: Pepijn
+ */
+
+
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+//Configuraties
+
+//**************
+// De ports die vast zitten aan de seven_segment_display
+#define SEVEN_SEGMENT_PORT1 PORTB
+#define SEVEN_SEGMENT_DDR1 DDRB
+
+#define SEVEN_SEGMENT_PORT2 PORTD
+#define SEVEN_SEGMENT_DDR2 DDRD
+
+void SevenSegment(uint8_t n,uint8_t dp)
+{
+/*
+This function writes a digit given by n to the display
+
+the decimal point is displayed if dp=1
+
+Note:
+n must be less than 9
+*/
+   if(n<10)
+   {
+      switch (n)
+      {
+      case 0:
+              	 //1
+               SEVEN_SEGMENT_PORT1=0b00010000;\
+
+               break;
+
+               case 1:
+              	 //2
+              	 SEVEN_SEGMENT_PORT1=0b11110011;
+
+               break;
+
+               case 2:
+              	 //3
+              	 SEVEN_SEGMENT_PORT1=0b00001001;
+
+               break;
+
+               case 3:
+              	 //4
+              	 SEVEN_SEGMENT_PORT1=0b11000001;
+
+               break;
+
+               case 4:
+              	 //5
+              	 SEVEN_SEGMENT_PORT1=0b11100010;
+               break;
+
+               case 5:
+              	 //6
+                   SEVEN_SEGMENT_PORT1=0b10000100;
+
+               break;
+
+               case 6:
+              	 //7
+              	 SEVEN_SEGMENT_PORT1=0b01000100;
+               break;
+
+               case 7:
+              	 //8
+
+                   SEVEN_SEGMENT_PORT1=0b11110001;
+               break;
+
+               case 8:
+              	 //9
+
+                   SEVEN_SEGMENT_PORT1=0b00000000;
+               break;
+
+               case 9:
+              	   //0
+               SEVEN_SEGMENT_PORT1=0b10000000;
+               break;
+      }
+   }
+   else
+   {
+      //This symbol on display tells that n was greater than 9
+      //so display can't handle it
+
+      SEVEN_SEGMENT_PORT1=0b11111101;
+   }
+}
+
+void SevenSegment2 (uint8_t n,uint8_t dp)
+{
+/*
+This function writes a digit given by n to the display
+
+the decimal point is displayed if dp=1
+
+Note:
+n must be less than 9
+*/
+   if(n<10)
+   {
+      switch (n)
+      {
+         case 0:
+        	 //0
+         SEVEN_SEGMENT_PORT2=0b00010000;\
+
+         break;
+
+         case 1:
+        	 //1
+        	 SEVEN_SEGMENT_PORT2=0b11110011;
+
+         break;
+
+         case 2:
+        	 //2
+        	 SEVEN_SEGMENT_PORT2=0b00001001;
+
+         break;
+
+         case 3:
+        	 //3
+        	 SEVEN_SEGMENT_PORT2=0b11000001;
+
+         break;
+
+         case 4:
+        	 //4
+        	 SEVEN_SEGMENT_PORT2=0b11100010;
+         break;
+
+         case 5:
+        	 //5
+             SEVEN_SEGMENT_PORT2=0b01000100;
+
+         break;
+
+         case 6:
+        	 //6
+        	 SEVEN_SEGMENT_PORT2=0b00000100;
+         break;
+
+         case 7:
+        	 //7
+
+             SEVEN_SEGMENT_PORT2=0b11110001;
+         break;
+
+         case 8:
+        	 //8
+
+             SEVEN_SEGMENT_PORT2=0b00000000;
+         break;
+
+         case 9:
+        	   //9
+         SEVEN_SEGMENT_PORT2=0b10000000;
+         break;
+      }
+   }
+   else
+   {
+      //This symbol on display tells that n was greater than 9
+      //so display can't handle it
+
+      SEVEN_SEGMENT_PORT2=0b11111101;
+   }
+}
+
+void main()
+{
+   //Setup
+   SEVEN_SEGMENT_DDR1=0xFF;    //All output
+   SEVEN_SEGMENT_PORT1=0xFF;   //All segments off
+
+   SEVEN_SEGMENT_DDR2=0xFF;    //All output
+   SEVEN_SEGMENT_PORT2=0xFF;   //All segments off
+
+   uint8_t count = 0;
+   uint8_t count2 = 0;
+
+   while(1)
+   {
+      SevenSegment(count,0);
+      SevenSegment2(count2,0);
+
+      count++;
+
+      if(count==10)
+      {
+         count=0;
+         count2++;
+      }
+      if(count2==10)
+      {
+         count2=0;
+      }
+
+      _delay_ms(250);
+   }
+}
+

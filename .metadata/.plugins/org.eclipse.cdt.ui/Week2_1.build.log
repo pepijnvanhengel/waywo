@@ -1,0 +1,56 @@
+12:06:30 **** Incremental Build of configuration Release for project Week2_1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328 Week2_1.elf
+AVR Memory Usage
+----------------
+Device: atmega328
+
+Program:     290 bytes (0.9% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+Invoking: AVRDude
+C:\WinAVR-20100110\bin\avrdude -pm328 -cusbasp -Evcc -Uflash:w:Week2_1.hex:a
+avrdude: WARNING: -E option not supported by this programmer type
+
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.02s
+
+avrdude: Device signature = 0x1e9514
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: warning: cannot set sck period. please check for usbasp firmware update.
+avrdude: reading input file "Week2_1.hex"
+avrdude: input file Week2_1.hex auto detected as Intel Hex
+avrdude: writing flash (290 bytes):
+
+Writing | ################################################## | 100% 0.16s
+
+avrdude: 290 bytes of flash written
+avrdude: verifying flash memory against Week2_1.hex:
+avrdude: load data flash data from input file Week2_1.hex:
+avrdude: input file Week2_1.hex auto detected as Intel Hex
+avrdude: input file Week2_1.hex contains 290 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.08s
+
+avrdude: verifying ...
+avrdude: 290 bytes of flash verified
+
+avrdude done.  Thank you.
+
+Finished building: avrdudedummy
+ 
+
+12:06:32 Build Finished (took 1s.157ms)
+

@@ -1,0 +1,40 @@
+/*
+ * main.c
+ *
+ *  Created on: 31 May 2016
+ *      Author: Pepijn
+ */
+
+#include <avr/io.h>
+#include <util/delay.h>
+
+int main (void)
+{
+	PORTD |= (1 << PD2);
+	DDRB |= (1 << PB0);
+
+	uint8_t ingedrukt = 0;
+	uint8_t geschiedenis = 0;
+	uint8_t toggle = 0;
+
+	while (1){
+		if (bit_is_clear(PIND, PD2)) {
+			//PORTB = 0b00000001;
+			ingedrukt = 1;
+		}
+		else {
+			//PORTB = 0b00000010;
+			ingedrukt = 0;
+		}
+
+		if (geschiedenis == ingedrukt){
+
+		}
+		else {
+
+		}
+
+		geschiedenis = ingedrukt;
+	}
+	return(0);
+}
